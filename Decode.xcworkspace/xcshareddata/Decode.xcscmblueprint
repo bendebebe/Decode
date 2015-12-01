@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "85602E53F1B49B61181DDEB478B181359DFEAAF2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "85602E53F1B49B61181DDEB478B181359DFEAAF2" : 0,
+    "1DC4C37ABCDE8BDF21E22D7B4AFA4E44155040B3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "66D2AEAE-E725-487A-BB16-B04709995E0F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "85602E53F1B49B61181DDEB478B181359DFEAAF2" : "Decode'\/",
+    "1DC4C37ABCDE8BDF21E22D7B4AFA4E44155040B3" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Decode",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Decode.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bendebebe\/Decode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1DC4C37ABCDE8BDF21E22D7B4AFA4E44155040B3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bendebebe\/Decode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "85602E53F1B49B61181DDEB478B181359DFEAAF2"
+    }
+  ]
+}
