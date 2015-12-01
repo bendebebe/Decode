@@ -8,17 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		ADE91980728C277E56F090B2 /* Pods_Decode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D631E2C77248A4DED4535E4 /* Pods_Decode.framework */; };
-		B226B3611C0D60EE00A537AC /* Main 16-19-11-786.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B226B35F1C0D60EE00A537AC /* Main 16-19-11-786.storyboard */; };
 		B226B3671C0D627700A537AC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B226B3661C0D627700A537AC /* libz.tbd */; };
 		B226B3691C0D64E700A537AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B226B3681C0D64E700A537AC /* Images.xcassets */; };
 		B226B36A1C0D65DA00A537AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; };
 		B226B36B1C0D65DA00A537AC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B226B36F1C0D65DF00A537AC /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B226B3641C0D626D00A537AC /* TesseractOCR.framework */; };
 		B226B3711C0D65E200A537AC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B226B3621C0D626900A537AC /* SwiftyJSON.framework */; };
+		B2C3207F1C0E0F340045EEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C3207D1C0E0F340045EEE1 /* Main.storyboard */; };
 		B2E888E81C0D39F400CC2F1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */; };
 		B2E888EA1C0D39F400CC2F1F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888E91C0D39F400CC2F1F /* MasterViewController.swift */; };
 		B2E888EC1C0D39F400CC2F1F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888EB1C0D39F400CC2F1F /* DetailViewController.swift */; };
-		B2E888EF1C0D39F400CC2F1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2E888ED1C0D39F400CC2F1F /* Main.storyboard */; };
 		B2E888FF1C0D39F400CC2F1F /* Decode_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888FE1C0D39F400CC2F1F /* Decode_Tests.swift */; };
 		B2E8890A1C0D39F400CC2F1F /* Decode_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E889091C0D39F400CC2F1F /* Decode_UITests.swift */; };
 		B2E889691C0D4FDA00CC2F1F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; };
@@ -114,16 +113,15 @@
 /* Begin PBXFileReference section */
 		3D631E2C77248A4DED4535E4 /* Pods_Decode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4467BB04FA144104D4AD84AC /* Pods-Decode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decode.release.xcconfig"; path = "Pods/Target Support Files/Pods-Decode/Pods-Decode.release.xcconfig"; sourceTree = "<group>"; };
-		B226B3601C0D60EE00A537AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../Fecode/Decode - Swift/Decode Main/Decode/Base.lproj/Main 16-19-11-786.storyboard"; sourceTree = "<group>"; };
 		B226B3621C0D626900A537AC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		B226B3641C0D626D00A537AC /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "Pods/../build/Debug-iphoneos/TesseractOCR.framework"; sourceTree = "<group>"; };
 		B226B3661C0D627700A537AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B226B3681C0D64E700A537AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../.Trash/Filters iOS/Filters iOS Main/Filters/Images.xcassets"; sourceTree = "<group>"; };
+		B2C3207E1C0E0F340045EEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2E888E41C0D39F400CC2F1F /* Decode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2E888E91C0D39F400CC2F1F /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B2E888EB1C0D39F400CC2F1F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		B2E888EE1C0D39F400CC2F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2E888F51C0D39F400CC2F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2E888FA1C0D39F400CC2F1F /* Decode.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Decode.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E888FE1C0D39F400CC2F1F /* Decode_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode_Tests.swift; sourceTree = "<group>"; };
@@ -215,8 +213,7 @@
 				B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */,
 				B2E888E91C0D39F400CC2F1F /* MasterViewController.swift */,
 				B2E888EB1C0D39F400CC2F1F /* DetailViewController.swift */,
-				B226B35F1C0D60EE00A537AC /* Main 16-19-11-786.storyboard */,
-				B2E888ED1C0D39F400CC2F1F /* Main.storyboard */,
+				B2C3207D1C0E0F340045EEE1 /* Main.storyboard */,
 				B226B3681C0D64E700A537AC /* Images.xcassets */,
 				B2E888F51C0D39F400CC2F1F /* Info.plist */,
 			);
@@ -427,8 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B226B3691C0D64E700A537AC /* Images.xcassets in Resources */,
-				B2E888EF1C0D39F400CC2F1F /* Main.storyboard in Resources */,
-				B226B3611C0D60EE00A537AC /* Main 16-19-11-786.storyboard in Resources */,
+				B2C3207F1C0E0F340045EEE1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,18 +540,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B226B35F1C0D60EE00A537AC /* Main 16-19-11-786.storyboard */ = {
+		B2C3207D1C0E0F340045EEE1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B226B3601C0D60EE00A537AC /* Base */,
-			);
-			name = "Main 16-19-11-786.storyboard";
-			sourceTree = "<group>";
-		};
-		B2E888ED1C0D39F400CC2F1F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2E888EE1C0D39F400CC2F1F /* Base */,
+				B2C3207E1C0E0F340045EEE1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -659,6 +647,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Decode'/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Decode.Decode-";
@@ -679,6 +668,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Decode'/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Decode.Decode-";
 				PRODUCT_NAME = Decode;

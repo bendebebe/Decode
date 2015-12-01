@@ -16,16 +16,33 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var tesseractLabel: UILabel!
     var tesseractText: String!
+    var newMedia: Bool?
     
     @IBAction func tesseractUpdate(sender: UIButton){
         translateText("hello", target: "es")
     }
+    
+    //--- Take Photo from Camera ---//
     @IBAction func imageButton(sender: UIButton) {
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.allowsEditing = false
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        print("popp")
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func useCameraRoll(sender: AnyObject) {
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.allowsEditing = false
+        
+        self.presentViewController(imagePicker, animated: true,
+            completion: nil)
     }
     
     override func viewDidLoad() {
@@ -33,31 +50,7 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    //--- Take Photo from Camera ---//
-    @IBAction func takePhotoFromCamera(sender: AnyObject)
-    {
-        self.presentCamera()
-    }
     
-    func presentCamera()
-    {
-        
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        {
-            print("Button capture")
-            
-            imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
-            imagePicker.allowsEditing = false
-            
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            // error msg
-        }
-    }
     func savedImageAlert()
     {
         let alertController:UIAlertController = UIAlertController(title: "Image Saved", message: "Your message has been saved", preferredStyle: .Alert)
@@ -80,52 +73,80 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print(0)
         if(picker.sourceType == UIImagePickerControllerSourceType.Camera)
         {
+            print(1)
             // Access the uncropped image from info dictionary
             let imageToSave: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            
-            
+            print(2)
             UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
-            
-            
+            print(3)
             imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-            imagePicker.dismissViewControllerAnimated(true, completion: nil)
+            print(4)
+            imagePickerControllerDidCancel(picker)
+            print(5)
             self.savedImageAlert()
-            
-            let imgManager = PHImageManager.defaultManager()
-            let fetchOptions = PHFetchOptions()
-            fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: true)]
-            let requestOptions = PHImageRequestOptions()
-            requestOptions.synchronous = true
-            
-            
-            //            if let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions) {
-            //                // If the fetch result isn't empty,
-            //                // proceed with the image request
-            //
-            //                // Perform the image request
-            //
-            //                imgManager.requestImageForAsset(fetchResult.lastObject as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
-            //                    let tesseract:Tesseract = Tesseract(language:"eng");
-            //                    tesseract.delegate = self;
-            //                    tesseract.setVariableValue("01234567890", forKey: "tessedit_char_whitelist");
-            //                    tesseract.image = image;
-            //                    tesseract.recognize();
-            //                    self.tesseractText = tesseract.recognizedText;
-            //                })
-            //            }
-            
-            
-            
+            newMedia = true
         }
-    }
+        else if (picker.sourceType == UIImagePickerControllerSourceType.PhotoLibrary) {
+            let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+            
+            if mediaType.isEqualToString(kUTTypeImage as String) {
+                
+                // Media is an image  
+                let imagetoDisplay : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+                imageView.contentMode = .ScaleAspectFit
+                imageView.image = imagetoDisplay
+                imagePickerControllerDidCancel(picker)
+                
+            }
+        }
+        let imgManager = PHImageManager.defaultManager()
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: true)]
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.synchronous = true
+        }
+    
+        
+        //            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
+        //            imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        //            // Access the uncropped image from info dictionary
+        //            print(2)
+        //            let imageToSave: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //
+        //
+        //
+        //            print(3)
+        //
+        //            imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        //            print(4)
+        //            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
+        //            print(5)
+        //            self.savedImageAlert()
+        //
+        
+        //            if let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions) {
+        //                // If the fetch result isn't empty,
+        //                // proceed with the image request
+        //
+        //                // Perform the image request
+        //
+        //                imgManager.requestImageForAsset(fetchResult.lastObject as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
+        //                    let tesseract:Tesseract = Tesseract(language:"eng");
+        //                    tesseract.delegate = self;
+        //                    tesseract.setVariableValue("01234567890", forKey: "tessedit_char_whitelist");
+        //                    tesseract.image = image;
+        //                    tesseract.recognize();
+        //                    self.tesseractText = tesseract.recognizedText;
+        //                })
+        //            }
+        
+    
     
     func translateText(text: String, target: String){
-        
-        let parameters1 = ["key":"AIzaSyAce0BL9xUWur47MTt2VwUB6qmKTzplX6Q","q":"\(translateText)"]
         var source: String!
-        var translated: String! = "";
         var t = "&q=";
         for i in text.characters {
             let s = String(i).unicodeScalars
@@ -175,8 +196,8 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
         
         
         
-    }
-    
+}
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

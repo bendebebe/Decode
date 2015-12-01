@@ -1,43 +1,153 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="IQi-23-w4S">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="bvd-UM-NJn">
+        <!--Master View Controller-->
+        <scene sceneID="aYJ-7G-48f">
             <objects>
-                <viewController id="mMo-ME-61C" sceneMemberID="viewController">
+                <viewController id="IQi-23-w4S" customClass="MasterViewController" customModule="Decode" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Dch-VQ-T9H"/>
-                        <viewControllerLayoutGuide type="bottom" id="mQp-wa-iYy"/>
+                        <viewControllerLayoutGuide type="top" id="AS0-X2-4H1"/>
+                        <viewControllerLayoutGuide type="bottom" id="uaj-v6-QgX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4hN-WI-PQV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="Dto-Zp-MBJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DECODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADt-NQ-G9o">
-                                <rect key="frame" x="245" y="20" width="110" height="21"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="filter-img-frame" translatesAutoresizingMaskIntoConstraints="NO" id="FGj-9m-FH8">
+                                <rect key="frame" x="7" y="61" width="304" height="379"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9t8-NZ-I3v">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Import-25" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-7H-ZQ3">
+                                        <rect key="frame" x="62" y="12" width="25" height="25"/>
+                                        <animations/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJ4-nb-mIo">
+                                        <rect key="frame" x="57" y="12" width="30" height="30"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="useCameraRoll:" destination="IQi-23-w4S" eventType="touchUpInside" id="Fa8-qS-Jg4"/>
+                                        </connections>
+                                    </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="SLR Camera-25" translatesAutoresizingMaskIntoConstraints="NO" id="uA2-mC-Taf">
+                                        <rect key="frame" x="148" y="12" width="25" height="25"/>
+                                        <animations/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uF2-66-U5Z">
+                                        <rect key="frame" x="145" y="8" width="30" height="30"/>
+                                        <animations/>
+                                    </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Google Translate-25" translatesAutoresizingMaskIntoConstraints="NO" id="Qv6-6n-jRS">
+                                        <rect key="frame" x="229" y="12" width="25" height="25"/>
+                                        <animations/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ej2-mT-feP">
+                                        <rect key="frame" x="226" y="10" width="30" height="30"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="tesseractUpdate:" destination="IQi-23-w4S" eventType="touchUpInside" id="sIp-uq-Wwt"/>
+                                            <segue destination="Mhh-h2-pEj" kind="modal" id="hOL-H2-z8E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-pE-bjJ">
+                                        <rect key="frame" x="145" y="10" width="30" height="30"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="imageButton:" destination="IQi-23-w4S" eventType="touchUpInside" id="ITN-fA-MbP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.76931202170000001" green="0.76931202170000001" blue="0.76931202170000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DECODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apY-Kx-Nns">
+                                <rect key="frame" x="105" y="28" width="110" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVs-GC-vNB">
-                                <rect key="frame" x="262" y="532" width="77" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wQ-VB-huz">
+                                <rect key="frame" x="9" y="63" width="300" height="376"/>
                                 <animations/>
-                                <state key="normal" title="Take Photo"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBN-23-Gfs">
-                                <rect key="frame" x="279" y="559" width="42" height="21"/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="1wQ-VB-huz" id="oBM-yt-Ocm"/>
+                        <outlet property="tesseractLabel" destination="RJQ-Jr-Vdy" id="msp-qK-b2E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xx0-5A-2Fc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="474" y="22"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="vKP-4w-j2b">
+            <objects>
+                <viewController id="Mhh-h2-pEj" customClass="DetailViewController" customModule="Decode" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BFf-Fl-zqA"/>
+                        <viewControllerLayoutGuide type="bottom" id="YQ8-cA-z62"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E7C-h0-2Fs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="filter-img-frame" translatesAutoresizingMaskIntoConstraints="NO" id="fKP-Do-ZEL">
+                                <rect key="frame" x="7" y="61" width="304" height="379"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wij-ub-5Fm">
+                                <rect key="frame" x="208" y="297" width="0.0" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWY-iI-IdW">
-                                <rect key="frame" x="20" y="44" width="560" height="485"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Translated Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-ZM-wbK">
+                                <rect key="frame" x="100" y="137" width="118" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DECODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqB-nC-XxY">
+                                <rect key="frame" x="104" y="28" width="110" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-9i-t1y">
+                                <rect key="frame" x="9" y="28" width="12" height="22"/>
+                                <animations/>
+                                <state key="normal" image="icon-arrow-back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-Jr-Vdy">
+                                <rect key="frame" x="138" y="166" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NzG-20-wbZ">
+                                <rect key="frame" x="-1" y="518" width="320" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.76931202170000001" green="0.76931202170000001" blue="0.76931202170000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Voice Recognition Scan-25" translatesAutoresizingMaskIntoConstraints="NO" id="1c6-0f-HCw">
+                                <rect key="frame" x="147" y="329" width="25" height="25"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -45,9 +155,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k8g-Fl-Mr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4E-1d-bv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="-98"/>
+            <point key="canvasLocation" x="884" y="22"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Google Translate-25" width="25" height="25"/>
+        <image name="Import-25" width="25" height="25"/>
+        <image name="SLR Camera-25" width="25" height="25"/>
+        <image name="Voice Recognition Scan-25" width="25" height="25"/>
+        <image name="filter-img-frame" width="304" height="379"/>
+        <image name="icon-arrow-back" width="12" height="21"/>
+    </resources>
 </document>
