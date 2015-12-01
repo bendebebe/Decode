@@ -18,7 +18,7 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
     var tesseractText: String!
     
     @IBAction func tesseractUpdate(sender: UIButton){
-        translateText("hello")
+        translateText("hello", target: "es")
     }
     @IBAction func imageButton(sender: UIButton) {
         imagePicker =  UIImagePickerController()
@@ -121,13 +121,12 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
-    func translateText(text: String){
+    func translateText(text: String, target: String){
         
         let parameters1 = ["key":"AIzaSyAce0BL9xUWur47MTt2VwUB6qmKTzplX6Q","q":"\(translateText)"]
         var source: String!
         var translated: String! = "";
-        self.tesseractLabel.text = "hi";
-        var t = "";
+        var t = "&q=";
         for i in text.characters {
             let s = String(i).unicodeScalars
             let ord = s[s.startIndex].value
@@ -149,27 +148,28 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
         let base_url = "https://www.googleapis.com/language/translate/v2"
         let key = "?key=AIzaSyAce0BL9xUWur47MTt2VwUB6qmKTzplX6Q"
         let detect_url = base_url + "/detect" + key + detect_text
+        var final_url = ""
         
-        //        #print detect_response
-        //        detect_response = json.loads(detect_response)
-        //        source = "&source=" + detect_response["data"]["detections"][0][0]["language"]
-        //        target = "&target=" + sys.argv[2]
-        //
-        //        final_url = base_url+key+text+source+target
-        //        #print final_url
-        //        translation = json.loads(urllib2.urlopen(final_url).read())
-        //        #print translation
-        //        #print detect_response
-        //        print translation["data"]["translations"][0]["translatedText"]
         
         Alamofire.request(.GET, detect_url)
             .responseJSON { response in
-                let json = JSON(response.data!)
-                print(json.description);
-                NSLog("@%", json.description);
-                if json != nil {
+                //language detection
+                let json = JSON(data: response.data!)
+                if json["data"]["detections"][0][0]["language"].string != nil {
                     source = json["data"]["detections"][0][0]["language"].string
-                    self.tesseractLabel.text = detect_url
+
+                    final_url = final_url+base_url+key+newText+"&source="+source+"&target="+target;
+
+                    
+                    Alamofire.request(.GET, final_url)
+                        .responseJSON { response in
+                            //translation request
+                            let json = JSON(data: response.data!)
+                            if json["data"]["translations"][0]["translatedText"].string != nil {
+                                //final translation
+                                self.tesseractLabel.text = json["data"]["translations"][0]["translatedText"].string
+                            }
+                    }
                 }
         }
         
