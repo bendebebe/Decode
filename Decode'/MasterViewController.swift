@@ -8,19 +8,20 @@
 import UIKit
 import MobileCoreServices
 import Photos
-import SwiftyJSON
-import Alamofire
+//import SwiftyJSON
 
-class MasterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, G8TesseractDelegate{
+
+class MasterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, G8TesseractDelegate {
     
     var imagePicker: UIImagePickerController!
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var tesseractLabel: UILabel!
-    var tesseractText: String!
+    var tesseractText = "none"
     var newMedia: Bool?
     
     @IBAction func tesseractUpdate(sender: UIButton){
-        translateText("hello", target: "es")
+        print("perform")
+        self.performSegueWithIdentifier("Detail View Controller", sender:self)
+        print("first")
     }
     
     //--- Take Photo from Camera ---//
@@ -135,67 +136,47 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
             // Perform the image request
 
             imgManager.requestImageForAsset(fetchResult.lastObject as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
-                let tesseract:G8Tesseract = G8Tesseract(language:"eng");
+                let tesseract = G8Tesseract(language:"eng");
                 tesseract.delegate = self;
-                tesseract.setVariableValue("01234567890", forKey: "tessedit_char_whitelist");
-                tesseract.image = image;
+                tesseract.engineMode = .TesseractCubeCombined
+                tesseract.pageSegmentationMode = .Auto
+                tesseract.maximumRecognitionTime = 60.0
+                let newImage = self.scaleImage(image!, maxDimension:640);
+                tesseract.image = image
                 tesseract.recognize();
+                print("before")
+                print(tesseract.recognizedText)
+                print("after")
                 self.tesseractText = tesseract.recognizedText;
+                
             })
         }
     }
     
     
     
-    func translateText(text: String, target: String){
-        var source: String!
-        var t = "&q=";
-        for i in text.characters {
-            let s = String(i).unicodeScalars
-            let ord = s[s.startIndex].value
-            if (ord < 128){
-                t = t+String(i)
-            }
+    func scaleImage(image: UIImage, maxDimension: CGFloat) -> UIImage {
+        
+        var scaledSize = CGSize(width: maxDimension, height: maxDimension)
+        var scaleFactor: CGFloat
+        
+        if image.size.width > image.size.height {
+            scaleFactor = image.size.height / image.size.width
+            scaledSize.width = maxDimension
+            scaledSize.height = scaledSize.width * scaleFactor
+        } else {
+            scaleFactor = image.size.width / image.size.height
+            scaledSize.height = maxDimension
+            scaledSize.width = scaledSize.height * scaleFactor
         }
-        let replaced = t.stringByReplacingOccurrencesOfString("\n", withString: "+")
-        let split_text = replaced.componentsSeparatedByString(" ")
         
+        UIGraphicsBeginImageContext(scaledSize)
+        image.drawInRect(CGRectMake(0, 0, scaledSize.width, scaledSize.height))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        var detect_text = ""
-        for i in split_text {
-            detect_text = detect_text + i+"+"
-        }
-        let range = Range(start: (detect_text.startIndex), end: ((detect_text.endIndex.advancedBy(-1))));
-        detect_text = detect_text.substringWithRange(range)
-        let newText = detect_text.stringByReplacingOccurrencesOfString("+", withString: "%20")
-        let base_url = "https://www.googleapis.com/language/translate/v2"
-        let key = "?key=AIzaSyAce0BL9xUWur47MTt2VwUB6qmKTzplX6Q"
-        let detect_url = base_url + "/detect" + key + detect_text
-        var final_url = ""
-        
-        
-        Alamofire.request(.GET, detect_url)
-            .responseJSON { response in
-                //language detection
-                let json = JSON(data: response.data!)
-                if json["data"]["detections"][0][0]["language"].string != nil {
-                    source = json["data"]["detections"][0][0]["language"].string
-
-                    final_url = final_url+base_url+key+newText+"&source="+source+"&target="+target;
-
-                    
-                    Alamofire.request(.GET, final_url)
-                        .responseJSON { response in
-                            //translation request
-                            let json = JSON(data: response.data!)
-                            if json["data"]["translations"][0]["translatedText"].string != nil {
-                                //final translation
-                                self.tesseractLabel.text = json["data"]["translations"][0]["translatedText"].string
-                            }
-                        }
-                    }
-                }
-            }
+        return scaledImage
+    }
         
 
     override func didReceiveMemoryWarning() {
@@ -204,9 +185,16 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        
-        
+        if (segue.identifier == "Detail View Controller") {
+            print("penis1")
+            let secondViewController = segue.destinationViewController as! DetailViewController
+            print("penis2")
+            print(self.tesseractText)
+            secondViewController.translatedText = self.tesseractText
+            print("penis3")
+            
+            
+        }
     }
     //    func shouldCancelImageRecognitionForTesseract(tesseract: Tesseract!) -> Bool {
     //        return false; // return true if you need to interrupt tesseract before it finishes

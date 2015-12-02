@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B217811D1C0E90D400ACFBEE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B217811C1C0E90D400ACFBEE /* SwiftyJSON.framework */; };
+		B20B09BD1C0E9571007AE4D5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20B09BC1C0E9571007AE4D5 /* SwiftyJSON.swift */; };
+		B20B09CD1C0E98B9007AE4D5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B20B09D21C0E992B007AE4D5 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20B09D11C0E992B007AE4D5 /* TesseractOCR.framework */; };
+		B20B09D61C0E9AF2007AE4D5 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = B20B09D51C0E9AF2007AE4D5 /* tessdata */; };
 		B226B3671C0D627700A537AC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B226B3661C0D627700A537AC /* libz.tbd */; };
 		B226B3691C0D64E700A537AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B226B3681C0D64E700A537AC /* Images.xcassets */; };
-		B226B36A1C0D65DA00A537AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; };
-		B226B36B1C0D65DA00A537AC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2C3207F1C0E0F340045EEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C3207D1C0E0F340045EEE1 /* Main.storyboard */; };
 		B2E888E81C0D39F400CC2F1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */; };
 		B2E888EA1C0D39F400CC2F1F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888E91C0D39F400CC2F1F /* MasterViewController.swift */; };
 		B2E888EC1C0D39F400CC2F1F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888EB1C0D39F400CC2F1F /* DetailViewController.swift */; };
 		B2E888FF1C0D39F400CC2F1F /* Decode_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888FE1C0D39F400CC2F1F /* Decode_Tests.swift */; };
 		B2E8890A1C0D39F400CC2F1F /* Decode_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E889091C0D39F400CC2F1F /* Decode_UITests.swift */; };
-		B2E889691C0D4FDA00CC2F1F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E889241C0D4C8400CC2F1F /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B226B36C1C0D65DA00A537AC /* PBXContainerItemProxy */ = {
+		B20B09D31C0E9992007AE4D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2E889191C0D4C8400CC2F1F /* Alamofire.xcodeproj */;
 			proxyType = 1;
@@ -101,7 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B226B36B1C0D65DA00A537AC /* Alamofire.framework in Embed Frameworks */,
+				B20B09CD1C0E98B9007AE4D5 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,8 +109,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B20B09BC1C0E9571007AE4D5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B20B09D11C0E992B007AE4D5 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		B20B09D51C0E9AF2007AE4D5 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		B21702DA1C0E88C900E89B35 /* MasterView-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MasterView-Header.h"; sourceTree = "<group>"; };
-		B217811C1C0E90D400ACFBEE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		B226B3661C0D627700A537AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B226B3681C0D64E700A537AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../.Trash/Filters iOS/Filters iOS Main/Filters/Images.xcassets"; sourceTree = "<group>"; };
 		B2C3207E1C0E0F340045EEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,10 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B217811D1C0E90D400ACFBEE /* SwiftyJSON.framework in Frameworks */,
+				B20B09D21C0E992B007AE4D5 /* TesseractOCR.framework in Frameworks */,
 				B226B3671C0D627700A537AC /* libz.tbd in Frameworks */,
-				B226B36A1C0D65DA00A537AC /* Alamofire.framework in Frameworks */,
-				B2E889691C0D4FDA00CC2F1F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,6 @@
 		8E6A3535CEFCDBD28504E401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B217811C1C0E90D400ACFBEE /* SwiftyJSON.framework */,
 				B2F4C5BD1C0E898200730E63 /* TesseractOCR */,
 				B226B3661C0D627700A537AC /* libz.tbd */,
 			);
@@ -194,12 +193,15 @@
 		B2E888E61C0D39F400CC2F1F /* Decode */ = {
 			isa = PBXGroup;
 			children = (
+				B20B09D51C0E9AF2007AE4D5 /* tessdata */,
+				B20B09BC1C0E9571007AE4D5 /* SwiftyJSON.swift */,
 				B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */,
 				B2E888E91C0D39F400CC2F1F /* MasterViewController.swift */,
 				B2E888EB1C0D39F400CC2F1F /* DetailViewController.swift */,
 				B2C3207D1C0E0F340045EEE1 /* Main.storyboard */,
 				B226B3681C0D64E700A537AC /* Images.xcassets */,
 				B2E888F51C0D39F400CC2F1F /* Info.plist */,
+				B20B09D11C0E992B007AE4D5 /* TesseractOCR.framework */,
 			);
 			name = Decode;
 			path = "Decode'";
@@ -252,7 +254,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B226B36D1C0D65DA00A537AC /* PBXTargetDependency */,
+				B20B09D41C0E9992007AE4D5 /* PBXTargetDependency */,
 			);
 			name = Decode;
 			productName = "Decode'";
@@ -406,6 +408,7 @@
 			files = (
 				B226B3691C0D64E700A537AC /* Images.xcassets in Resources */,
 				B2C3207F1C0E0F340045EEE1 /* Main.storyboard in Resources */,
+				B20B09D61C0E9AF2007AE4D5 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +436,7 @@
 				B2E888EC1C0D39F400CC2F1F /* DetailViewController.swift in Sources */,
 				B2E888EA1C0D39F400CC2F1F /* MasterViewController.swift in Sources */,
 				B2E888E81C0D39F400CC2F1F /* AppDelegate.swift in Sources */,
+				B20B09BD1C0E9571007AE4D5 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,10 +459,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B226B36D1C0D65DA00A537AC /* PBXTargetDependency */ = {
+		B20B09D41C0E9992007AE4D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
-			targetProxy = B226B36C1C0D65DA00A537AC /* PBXContainerItemProxy */;
+			targetProxy = B20B09D31C0E9992007AE4D5 /* PBXContainerItemProxy */;
 		};
 		B2E888FC1C0D39F400CC2F1F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -576,13 +580,20 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/",
+					"$(PROJECT_DIR)/Decode'",
 				);
 				INFOPLIST_FILE = "Decode'/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-weak_library",
+					"/usr/lib/libstdc++.6.0.9.dylib",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Decode.Decode-";
 				PRODUCT_NAME = Decode;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/bdebebe/Documents/Decode/Decode'/MasterView-Header.h";
@@ -598,12 +609,20 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/",
+					"$(PROJECT_DIR)/Decode'",
 				);
 				INFOPLIST_FILE = "Decode'/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-weak_library",
+					"/usr/lib/libstdc++.6.0.9.dylib",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Decode.Decode-";
 				PRODUCT_NAME = Decode;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/bdebebe/Documents/Decode/Decode'/MasterView-Header.h";
