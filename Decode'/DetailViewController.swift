@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var tesseractLabel: UILabel!
     var translatedText : String!
+    var targetLang : String = ""
     func translateText(text: String, target: String){
         var source: String!
         var t = "&q=";
@@ -99,7 +100,7 @@ class DetailViewController: UIViewController {
         self.configureView()
         print("penis5")
         print(self.translatedText)
-        translateText(self.translatedText, target: "es")
+        translateText(self.translatedText, target: self.targetLang)
         print("penis6")
     }
 

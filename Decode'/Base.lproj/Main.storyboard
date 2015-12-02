@@ -77,17 +77,41 @@
                                 <rect key="frame" x="9" y="63" width="300" height="376"/>
                                 <animations/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="source" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0kI-du-YS1">
+                                <rect key="frame" x="48" y="473" width="67" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPP-rp-IIY">
+                                <rect key="frame" x="57" y="447" width="49" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Source"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-eX-BoW">
+                                <rect key="frame" x="201" y="447" width="44" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Target"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="target" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dH2-dT-O5K">
+                                <rect key="frame" x="190" y="473" width="67" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="1wQ-VB-huz" id="oBM-yt-Ocm"/>
+                        <outlet property="sourceTextField" destination="0kI-du-YS1" id="4Ly-Bz-sqp"/>
+                        <outlet property="targetTextField" destination="dH2-dT-O5K" id="9ii-93-LsV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xx0-5A-2Fc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="22"/>
+            <point key="canvasLocation" x="-166" y="-906"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="vKP-4w-j2b">
@@ -127,7 +151,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-Jr-Vdy">
-                                <rect key="frame" x="7" y="166" width="304" height="144"/>
+                                <rect key="frame" x="7" y="166" width="304" height="55"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,7 +163,7 @@
                                 <color key="backgroundColor" red="0.76931202170000001" green="0.76931202170000001" blue="0.76931202170000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Voice Recognition Scan-25" translatesAutoresizingMaskIntoConstraints="NO" id="1c6-0f-HCw">
-                                <rect key="frame" x="147" y="329" width="25" height="25"/>
+                                <rect key="frame" x="148" y="316" width="25" height="25"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -152,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4E-1d-bv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="22"/>
+            <point key="canvasLocation" x="244" y="-906"/>
         </scene>
     </scenes>
     <resources>

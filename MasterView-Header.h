@@ -6,6 +6,7 @@
 //  Copyright © 2015 Decode. All rights reserved.
 //
 
+#import "/Users/bdebebe/Documents/Decode/Decode'/Decode'/Pickers/ActionSheetPicker.h"
 #import </Users/bdebebe/Documents/Decode/Decode'/TesseractOCR/G8Tesseract.h>
 @interface MasterViewController : UIViewController <G8TesseractDelegate>
 @end

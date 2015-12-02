@@ -13,6 +13,7 @@
 		B20B09D61C0E9AF2007AE4D5 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = B20B09D51C0E9AF2007AE4D5 /* tessdata */; };
 		B226B3671C0D627700A537AC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B226B3661C0D627700A537AC /* libz.tbd */; };
 		B226B3691C0D64E700A537AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B226B3681C0D64E700A537AC /* Images.xcassets */; };
+		B2AF23A21C0F9AF900B0C872 /* Pickers in Resources */ = {isa = PBXBuildFile; fileRef = B2AF23A11C0F9AF900B0C872 /* Pickers */; };
 		B2C3207F1C0E0F340045EEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C3207D1C0E0F340045EEE1 /* Main.storyboard */; };
 		B2E888E81C0D39F400CC2F1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */; };
 		B2E888EA1C0D39F400CC2F1F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E888E91C0D39F400CC2F1F /* MasterViewController.swift */; };
@@ -115,6 +116,7 @@
 		B21702DA1C0E88C900E89B35 /* MasterView-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MasterView-Header.h"; sourceTree = "<group>"; };
 		B226B3661C0D627700A537AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B226B3681C0D64E700A537AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../../../.Trash/Filters iOS/Filters iOS Main/Filters/Images.xcassets"; sourceTree = "<group>"; };
+		B2AF23A11C0F9AF900B0C872 /* Pickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Pickers; path = "/Users/bdebebe/Documents/Decode/Decode'/Decode'/Pickers"; sourceTree = "<absolute>"; };
 		B2C3207E1C0E0F340045EEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2E888E41C0D39F400CC2F1F /* Decode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E888E71C0D39F400CC2F1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AF23A21C0F9AF900B0C872 /* Pickers in Resources */,
 				B226B3691C0D64E700A537AC /* Images.xcassets in Resources */,
 				B2C3207F1C0E0F340045EEE1 /* Main.storyboard in Resources */,
 				B20B09D61C0E9AF2007AE4D5 /* tessdata in Resources */,
