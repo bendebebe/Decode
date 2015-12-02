@@ -11,7 +11,8 @@ import Photos
 import SwiftyJSON
 import Alamofire
 
-class MasterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class MasterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, G8TesseractDelegate{
+    
     var imagePicker: UIImagePickerController!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var tesseractLabel: UILabel!
@@ -107,7 +108,7 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
         fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: true)]
         let requestOptions = PHImageRequestOptions()
         requestOptions.synchronous = true
-        }
+        
     
         
         //            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil);
@@ -127,22 +128,23 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
         //            self.savedImageAlert()
         //
         
-        //            if let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions) {
-        //                // If the fetch result isn't empty,
-        //                // proceed with the image request
-        //
-        //                // Perform the image request
-        //
-        //                imgManager.requestImageForAsset(fetchResult.lastObject as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
-        //                    let tesseract:Tesseract = Tesseract(language:"eng");
-        //                    tesseract.delegate = self;
-        //                    tesseract.setVariableValue("01234567890", forKey: "tessedit_char_whitelist");
-        //                    tesseract.image = image;
-        //                    tesseract.recognize();
-        //                    self.tesseractText = tesseract.recognizedText;
-        //                })
-        //            }
-        
+        if let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions) {
+            // If the fetch result isn't empty,
+            // proceed with the image request
+
+            // Perform the image request
+
+            imgManager.requestImageForAsset(fetchResult.lastObject as! PHAsset, targetSize: view.frame.size, contentMode: PHImageContentMode.AspectFill, options: requestOptions, resultHandler: { (image, _) in
+                let tesseract:G8Tesseract = G8Tesseract(language:"eng");
+                tesseract.delegate = self;
+                tesseract.setVariableValue("01234567890", forKey: "tessedit_char_whitelist");
+                tesseract.image = image;
+                tesseract.recognize();
+                self.tesseractText = tesseract.recognizedText;
+            })
+        }
+    }
+    
     
     
     func translateText(text: String, target: String){
@@ -190,13 +192,11 @@ class MasterViewController: UIViewController, UINavigationControllerDelegate, UI
                                 //final translation
                                 self.tesseractLabel.text = json["data"]["translations"][0]["translatedText"].string
                             }
+                        }
                     }
                 }
-        }
+            }
         
-        
-        
-}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

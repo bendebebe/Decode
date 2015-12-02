@@ -1,6 +1,0 @@
-framework module Pods_Decode {
-  umbrella header "Pods-Decode-umbrella.h"
-
-  export *
-  module * { export * }
-}
